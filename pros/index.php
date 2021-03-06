@@ -14,7 +14,7 @@
       
       Password: <input type="password" name="pwd"><br><br>
       
-      <p style="color:#FF0000";> <?php 
+      <p style="color:#FF0000";> <?php
 	
 	if($_GET["msg"] && $_GET["msg"] == 'failed') {
 		echo "Wrong Username or Password<br>";
@@ -22,7 +22,7 @@
 	}
       
       ?></p>
-      
+
       <center><input type="submit" name="sub" value="Login"/></center><br><br>
       
       </form>	
