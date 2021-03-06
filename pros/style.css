@@ -21,7 +21,7 @@ input[type=submit] {
 }
 
 /* The message box is shown when the user clicks on the password field */
-message {
+#message {
   display:none;
   background: #f1f1f1;
   color: #000;

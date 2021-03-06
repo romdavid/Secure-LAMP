@@ -1,4 +1,3 @@
-<script>
 var myInput = document.getElementById("pwd");
 var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
@@ -56,4 +55,12 @@ myInput.onkeyup = function() {
     length.classList.add("invalid");
   }
 }
-</script>
+function Validate() {
+        var password = document.getElementById("pwd").value;
+        var confirmPassword = document.getElementById("confpwd").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }

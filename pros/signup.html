@@ -23,8 +23,10 @@
          Username: <input type="text" name="usr" required><br><br>
       
          Password: <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br><br>
-      
-         <center><input type="submit" name="sub" value="Create Account"/></center><br><br>
+
+         Confirm Password: <input type="password" id="confpwd">
+
+         <center><input type="submit" name="sub" value="Create Account" onclick="return Validate()"/></center><br><br>
       
          </form>
 
