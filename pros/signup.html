@@ -2,6 +2,7 @@
    <head>
       <title>Create Pros Account</title>
       <link rel="stylesheet" href="style.css">
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       <script src="script.js" async></script>
    </head>
 	
@@ -26,6 +27,8 @@
 
          Confirm Password: <input type="password" id="confpwd">
 
+         Captcha: <div class="g-recaptcha" data-sitekey="6LcO-YMaAAAAAKm34qo23ZWWaIky9nkU7G19ZDKK"></div>
+
          <center><input type="submit" name="sub" value="Create Account" onclick="return Validate()"/></center><br><br>
       
          </form>
@@ -42,4 +45,6 @@
 
       <A HREF="index.html">Back to login page</A>
    </body>
-</html>	
+</html>
+
+/* Website to check for suspicious behavior through Captcha: https://www.google.com/recaptcha/admin/site/444856590 */
