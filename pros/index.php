@@ -32,7 +32,7 @@
       </form>	
       
       <A HREF="signup.html">Don't have an account?</A><br><br>
-      <A HREF="forgotusername.html">Forgot Username and Password?</A>
+      <A HREF="forgotuser.html">Forgot Username and Password?</A>
 
    </div>
 
