@@ -71,3 +71,19 @@ window.onload = function() {
         $recaptcha.setAttribute("required", "required");
     }
 };
+function myFunctions() {
+  var x = document.getElementById("newPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function myFunction() {
+  var x = document.getElementById("confirmPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
