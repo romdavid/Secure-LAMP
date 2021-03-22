@@ -12,7 +12,7 @@
       
       <h2>Sign in below</h2>
    
-      <form method="post" action="login.php">
+      <form method="post" action="login.php" autocomplete="off">
       
       Username: <input type="text" name="usr" maxlength="15"><br><br>
       
