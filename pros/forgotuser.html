@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Forgot Username and Password</title>
+    <title>Forgot Username or Password</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h1>Enter Email</h1>
 <div class="container">
+    <form method="post" action="answerquestions.php" autocomplete="off">
+	    E-mail: <br>
+	    <input type="text" name="email" maxlength="50" required>
+	    
+	    <input type="submit" value="Submit">
+	    <br><br>
 
-    E-mail:
-    <br><input type="text" name="email" maxlength="50" required>
-    <input type="submit" value="Submit">
-    <br><br>
-
-    <A HREF="index.html">Back to login page</A>
+	    <A HREF="index.php">Back to login page</A>
+	</form>
 
 </div>
 
