@@ -12,7 +12,6 @@
 	$username = $config['username'];
 	$password = $config['password'];
 	$dbname = $config['dbname'];
-	$tblname = $config['dbtable'];
 	$connect = mysqli_connect($host, $username, $password, $dbname) or die ("cannot connect");
 	
 	$myusername = $_POST['usr'];
