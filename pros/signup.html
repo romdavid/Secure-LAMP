@@ -3,7 +3,7 @@
       <title>Create Pros Account</title>
       <link rel="stylesheet" href="style.css">
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-      <script src="script.js" async></script>
+      <script src="signup.js" async></script>
    </head>
 	
    <body>
@@ -13,50 +13,62 @@
 
          <form method="post" action="createuser.php" autocomplete="off">
       
-         First name: <br><input type="text" name="first" maxlength="30" required><br><br>
+            First name:
+            <br><input type="text" name="first" maxlength="25" required><br><br>
       
-         Last name: <br><input type="text" name="last" maxlength="30" required><br><br>
+            Last name:
+            <br><input type="text" name="last" maxlength="25" required><br><br>
       
-         Birthdate: <br><input type="date" name="birth" required><br><br>
+            Birthdate:
+            <br><input type="date" name="birth" required><br><br>
       
-         E-mail: <br><input type="text" name="email" maxlength="50" required><br><br>
+            E-mail:
+            <br><input type="text" name="email" maxlength="50" required><br><br>
       
-         Username: <br><input type="text" name="usr" maxlength="15" required><br><br>
+            Username:
+            <br><input type="text" name="usr" maxlength="20" required><br><br>
       
-         Password: <br><input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" maxlength="30" required><br><br>
+            Password:
+            <br><input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" maxlength="30" required><br><br>
 
-         Confirm Password: <br><input type="password" id="confpwd" maxlength="30" required><br><br>
-         
-	Select Security Question 1: <select name="q1">
-	<option value="What was your childhood nickname?">What was your childhood nickname?</option>
-	<option value="What school did you attend for sixth grade?">What school did you attend for sixth grade?</option>
-	<option value="What was the name of your first stuffed animal?">What was the name of your first stuffed animal?</option>
-   	<option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
-	<option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-	<option value="Who was your childhood hero?">Who was your childhood hero?</option>
-	</select>
-	<br><input type="text" name="ans1" maxlength="30" required>
-	<br><br>
-	Select Security Question 2: <select name="q2">
-	<option value="In what city or town was your first job?">In what city or town was your first job?</option>
-	<option value="What was your dream job as a child?">What was your dream job as a child?</option>
-	<option value="In what county were you born?">In what county were you born?</option>
-	<option value="What is the name of your favorite childhood teacher?">What is the name of your favorite childhood teacher?</option>
-	<option value="What is the name of your favorite childhood pet?">What is the name of your favorite childhood pet?</option>
-	<option value="In what city did you meet your spouse/significant other?">In what city did you meet your spouse/significant other?</option>
-	</select>
-	<br><input type="text" name="ans2" maxlength="30" required>
-	<br><br>
+            Confirm Password:
+            <br><input type="password" id="confpwd" maxlength="30" required><br><br>
 
-         <center><div class="g-recaptcha" data-sitekey="6LcO-YMaAAAAAKm34qo23ZWWaIky9nkU7G19ZDKK"></div></center><br><br>
+            Select Security Question 1:
+            <select name="topic1" id="topic1">
+                 <option value="" selected="selected">What was your childhood nickname?</option>
+                 <option value="" selected="selected">What school did you attend for sixth grade?</option>
+                 <option value="" selected="selected">What was the name of your first stuffed animal?</option>
+                 <option value="" selected="selected">In what city or town did your mother and father meet?</option>
+                 <option value="" selected="selected">What is your mother's maiden name?</option>
+                 <option value="" selected="selected">Who was your childhood hero?</option>
+             </select>
+                 <br><input type="text" name="first" maxlength="20" required>
+                 <br><br>
 
-         <center>
-            <input type="submit" name="sub" value="Create Account" onclick="return Validate()"/>
-         </center><br><br>
+            Select Security Question 2:
+            <select name="topic2" id="topic2">
+                 <option value="" selected="selected">In what city or town was your first job?</option>
+                 <option value="" selected="selected">What was your dream job as a child?</option>
+                 <option value="" selected="selected">In what county were you born?</option>
+                 <option value="" selected="selected">What is the name of your favorite childhood teacher?</option>
+                 <option value="" selected="selected">What is the name of your favorite childhood pet?</option>
+                 <option value="" selected="selected">In what city did you meet your spouse/significant other?</option>
+             </select>
+                 <br><input type="text" name="second" maxlength="20" required>
+                 <br><br>
 
-            <A HREF="index.php">Back to login page</A>
-      
+             <center>
+                 <div class="g-recaptcha" data-sitekey="6LcO-YMaAAAAAKm34qo23ZWWaIky9nkU7G19ZDKK"></div>
+             </center><br><br>
+
+             <center>
+                <input type="submit" name="sub" value="Create Account" onclick="return Validate()"/>
+             </center><br><br>
+
          </form>
+
+          <A HREF="index.php">Back to login page</A>
 
       </div>
 
@@ -67,7 +79,6 @@
          <p id="number" class="invalid">A <b>number</b></p>
          <p id="length" class="invalid">Minimum <b>8 characters</b></p>
       </div>
-      
 
    </body>
 </html>
