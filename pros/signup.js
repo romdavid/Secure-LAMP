@@ -70,4 +70,4 @@ window.onload = function() {
     if($recaptcha) {
         $recaptcha.setAttribute("required", "required");
     }
-};
+}
