@@ -14,7 +14,7 @@
    
       <form method="post" action="login.php" autocomplete="off">
       
-      Username: <input type="text" name="usr" maxlength="15"><br><br>
+      Username: <input type="text" name="usr" maxlength="20"><br><br>
       
       Password: <input type="password" name="pwd" maxlength="30"><br><br>
 
@@ -31,7 +31,7 @@
       
       </form>	
       
-      <A HREF="signup.html">Don't have an account?</A><br><br>
+      <A HREF="signup.html">Don't have an account? Sign up</A><br><br>
       <A HREF="forgotuser.html">Forgot Username and Password?</A>
 
    </div>

@@ -25,33 +25,46 @@
     <meta charset="UTF-8">
     <title>Change Password</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" async></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="changepassword.js" async></script>
 </head>
 <body>
 
 <h1>Change Password</h1>
 <div class="container">
-    <form method="post" action="reset.php" autocomplete="off">
+    <form method="post" action="">
 
         Enter Username:<br>
-        <input type="text" name="usr" maxlength="15" required><br><br>
+        <input type="text" name="usr" maxlength="20" required><br><br>
 
         New Password:
-        <input type="password" id="newPassword" name="newPassword" title="New password" maxlength="30" required/>
+        <input type="password" id="newPassword" name="newPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" maxlength="30" required/>
         <br><center>Show Password</center><input type="checkbox" onclick="myPassFunction()"><br><br>
 
         Confirm Password:
         <input type="password" id="confirmPassword" name="confirmPassword" title="Confirm new password" maxlength="30" required/>
         <br><center>Show Password</center><input type="checkbox" onclick="myConfirmFunction()"><br>
 
+        <center>
+            <div class="g-recaptcha" data-sitekey="6LcO-YMaAAAAAKm34qo23ZWWaIky9nkU7G19ZDKK"></div>
+        </center><br><br>
+
         <p class="form-actions">
-            <input type="submit" value="Change Password"/>
+            <input type="submit" value="Change Password" onclick="return Validate()"/>
         </p>
+
+        <A HREF="index.html">Back to login page</A>
+
     </form>
-
-
-	<A HREF="index.php">Back to login page</A>
-
 </div>
+
+<div id="message">
+    <h3>Password must contain the following:</h3>
+    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+    <p id="number" class="invalid">A <b>number</b></p>
+    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+
 </body>
 </html>
