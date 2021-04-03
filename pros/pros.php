@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if (is_null($_SESSION['first'])) {
+	if (is_null($_SESSION['first']) or is_null($_SESSION['last']) or is_null($_SESSION['logins']) or is_null($_SESSION['prev_login'])) {
 		session_destroy();
 		header('Location: index.php');
 		exit(0);
@@ -16,7 +16,7 @@
    <body>
       <center><h1>Pros</h1></center><br>
       
-      <p>Hi, <?=$_SESSION['first']?> <?=$_SESSION['last']?>, you've logged in <?=$_SESSION['logins']?> times</p>
+      <p>Hi, <?=$_SESSION['first']?> <?=$_SESSION['last']?>, you've logged in <?=$_SESSION['logins']?> times.</p>
       <p>Last login date: <?=$_SESSION['prev_login']?></p><br>
       
       <! company_confidential_file.txt >

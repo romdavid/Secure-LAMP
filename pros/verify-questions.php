@@ -52,7 +52,7 @@
 	
 	<h1>Email Sent</h1>
 	<br>
-	<p><b>Check your E-mail to get username/reset password</b></p>
+	<p><b>Check your E-mail to get username/reset password.</b></p>
 
 	</body>
 </html>

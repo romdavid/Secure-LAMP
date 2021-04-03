@@ -32,7 +32,7 @@
 
 <h1>Change Password</h1>
 <div class="container">
-    <form method="post" action="">
+    <form method="post" action="reset.php" autocomplete="off">
 
         Enter Username:<br>
         <input type="text" name="usr" maxlength="20" required><br><br>
@@ -53,7 +53,7 @@
             <input type="submit" value="Change Password" onclick="return Validate()"/>
         </p>
 
-        <A HREF="index.html">Back to login page</A>
+        <A HREF="index.php">Back to login page</A>
 
     </form>
 </div>

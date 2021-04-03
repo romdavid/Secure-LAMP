@@ -14,16 +14,15 @@
    
       <form method="post" action="login.php" autocomplete="off">
       
-      Username: <input type="text" name="usr" maxlength="20"><br><br>
+      Username: <input type="text" name="usr" maxlength="20" required><br><br>
       
-      Password: <input type="password" name="pwd" maxlength="30"><br><br>
+      Password: <input type="password" name="pwd" maxlength="30" required><br><br>
 
       <p style="color:#FF0000";> <?php
 	
-	if($_GET["msg"] && $_GET["msg"] == 'failed') {
-		echo "Wrong Username or Password<br>";
-		echo "(".$_GET["msg"].")";
-	}
+		if($_GET["msg"] && $_GET["msg"] == 'failed') {
+			echo "Wrong Username or Password<br>";
+		}
       
       ?></p>
 
