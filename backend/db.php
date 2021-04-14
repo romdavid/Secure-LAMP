@@ -9,8 +9,27 @@
 			$this->connect = mysqli_connect($host, $username, $password, $dbname) or die ("cannot connect");
 		}
 		
+		function escape($input) {
+			return mysqli_real_escape_string($this->connect, $input);
+		}
+		
+		function verify_user_email($user, $email) {
+			$result = mysqli_query($this->connect, "SELECT id FROM login WHERE username='$user'");
+                        if ($result) {
+                                $user_id = mysqli_fetch_assoc($result)[id];
+                        	$result = mysqli_query($this->connect, "SELECT id FROM login WHERE email='$email'");
+                        	if ($result) {
+                                	$email_id = mysqli_fetch_assoc($result)[id];
+					if ($email_id === $user_id) {
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+
 		function get_active_id($username, $password) {
-			$result = mysqli_query($this->connect, "SELECT id FROM login WHERE password='$password' AND username='$username'");
+			$result = mysqli_query($this->connect, "SELECT id FROM login WHERE password='$password' AND username='$username' AND activated=1");
 			if ($result) {
 				$id = mysqli_fetch_assoc($result)['id'];
 				return $id;

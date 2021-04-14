@@ -8,7 +8,7 @@
 		$id = $_SESSION['id'];
 		if ($id) {
 			$db = new Database;
-			if ($db->verify_answers($id, $_POST['ans1'], $_POST['ans2'])) {
+			if ($db->verify_answers($id, sha1($_POST['ans1']), sha1($_POST['ans2']))) {
 				$myemail = $db->get_email($id);
 				$email = new Email;
 				$data = $db->get_usertoken($myemail);

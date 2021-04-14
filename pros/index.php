@@ -16,7 +16,7 @@
       
       Username: <input type="text" name="usr" maxlength="20" required><br><br>
       
-      Password: <input type="password" name="pwd" maxlength="30" required><br><br>
+      Password: <input type="password" name="pwd" maxlength="30" required><br>
 
       <p style="color:#FF0000";> <?php
 	
@@ -24,7 +24,8 @@
 			echo "Wrong Username or Password<br>";
 		}
       
-      ?></p>
+      ?></p><br>
+      
 
       <center><input type="submit" name="sub" value="Login"/></center><br><br>
       

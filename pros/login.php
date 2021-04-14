@@ -11,14 +11,8 @@
 	}
 	
 	$db = new Database;
-	
 	$myusername = $_POST['usr'];
-	$mypassword = $_POST['pwd'];
-	
-	//$myusername = stripslashes($myusername):
-	//$mypassword = stripslashes($mypassword);
-	//$myusername = mysqli_real_escape_string($myusername);
-	//$mypassword = mysqli_real_escape_string($mypassword);
+	$mypassword = sha1($_POST['pwd']);
 	
 	$id = $db->get_active_id($myusername, $mypassword);
 	
@@ -41,10 +35,8 @@
 		header('location: pros.php');
 		
 	} else {
-	
 		//echo "Sorry but login failed :(";
 		header("location: index.php?msg=failed");
-		
 	}
 
 ?>

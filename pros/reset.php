@@ -10,7 +10,7 @@
 			if ($_SESSION['token']) {
 				if ($db->verify_token_user($_SESSION['token'], $_POST['usr'])) {
 					
-					if ($db->reset_password($_POST['usr'], $_POST['newPassword'])) {
+					if ($db->reset_password($_POST['usr'], sha1($_POST['newPassword']))) {
 						$reset = true;
 						$db->destroy_token($_SESSION['token']);
 						session_unset();
