@@ -26,7 +26,8 @@
 	$ans1 = sha1($_POST['first']);
 	$ans2 = sha1($_POST['second']);
 	$token = md5(md5($myemail).rand(10,99999999)).rand(10,99999999);
-	$link = "https://localhost/activate.php?t=".$token."";
+	$address = parse_ini_file('../private/config.ini')['address'];
+	$link = "https://".$address."/activate.php?t=".$token."";
 	
 	if (!($db->create_user($myusername,$mypassword,$token,$myemail,$myfirst,$mylast,$mybirth,$q1,$q2,$ans1,$ans2))) {
 		header('location: signup.html');

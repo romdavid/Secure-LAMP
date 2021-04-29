@@ -15,7 +15,8 @@
 				if ($data) {
 					$user = $data[0];
 					$token = $data[1];
-					$link = "https://localhost/changepassword.php?t=$token";
+					$address = parse_ini_file('../private/config.ini')['address'];
+					$link = "https://".$address."/changepassword.php?t=$token";
 					$subject = 'Forgot Username/Password';
 					$body = '<b>Click the button below to reset your password</b>
 						   	<br><br>
