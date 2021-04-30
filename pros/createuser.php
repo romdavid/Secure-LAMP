@@ -12,7 +12,7 @@
 	
 	$myusername = $_POST['usr'];
 	$myemail = $_POST['email'];
-	if ($db->verify_user_email($myusername, $myemail) === false) {
+	if ($db->verify_user_email($myusername, $myemail) === true) {
 		header('location: signup.html');
 		exit(0);
 	}

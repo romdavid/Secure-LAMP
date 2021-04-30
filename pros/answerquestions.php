@@ -1,19 +1,23 @@
 <?php
 	require "../backend/db.php";
 	
+	$email_exists = false;
 	if ($_POST['email']) {
 		$db = new Database;
 		$data = $db->get_questions($_POST['email']);
-		if ($data == false) {
-			header("location: forgotuser.html");
-			exit(0);
+		if ($data) {
+			$email_exists = true;
+			session_start();
+			$q1 = $data[0];
+			$q2 = $data[1];
+			$_SESSION['id'] = $data[2];
 		}
-		session_start();
-		$q1 = $data[0];
-		$q2 = $data[1];
-		$_SESSION['id'] = $data[2];
 	}
-
+	
+	if ($email_exists === false) {
+                header("location: forgotuser.html");
+                exit(0);
+	}
 ?>
 
 
