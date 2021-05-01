@@ -24,7 +24,10 @@
 		if($_GET["msg"] && $_GET["msg"] == 'failed') {
 			echo "Wrong Username or Password<br>";
 		}
-      
+      		if($_GET["msg"] && $_GET["msg"] == 'failed-mfa') {
+                        echo "Wrong Access Code<br>";
+                }
+		
       ?></p><br>
 
          <br>
