@@ -15,10 +15,10 @@
 		
 		function verify_user_email($user, $email) {
 			$result = mysqli_query($this->connect, "SELECT id FROM login WHERE username='$user'");
-                        if ($result) {
+                        if (mysqli_num_rows($result) == 1) {
                                 $user_id = mysqli_fetch_assoc($result)[id];
                         	$result = mysqli_query($this->connect, "SELECT id FROM login WHERE email='$email'");
-                        	if ($result) {
+                        	if (mysqli_num_rows($result) == 1) {
                                 	$email_id = mysqli_fetch_assoc($result)[id];
 					if ($email_id === $user_id) {
 						return true;
@@ -99,9 +99,9 @@
 			return false;
 		}
 		
-		function get_questions($email) {
-			$result = mysqli_query($this->connect, "SELECT id FROM login WHERE email='$email'");
-			if ($result) {
+		function get_questions($mail) {
+			$result = mysqli_query($this->connect, "SELECT id FROM login WHERE email='$mail'");
+			if (mysqli_num_rows($result) == 1) {
 				$id = mysqli_fetch_assoc($result)['id'];
 				$result = mysqli_query($this->connect, "SELECT question1,question2 FROM info WHERE id='$id'");
 				if ($result) {

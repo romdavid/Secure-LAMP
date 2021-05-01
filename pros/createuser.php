@@ -3,7 +3,6 @@
 	require "../backend/mail.php";
 
 	if (!($_POST['firstname'] and $_POST['lastname'] and $_POST['email'] and $_POST['topic1'] and $_POST['topic2'] and $_POST['first'] and $_POST['second'] and $_POST['usr'] and $_POST['pwd'])) {
-		
 		header('location: signup.html');
 		exit(0);
 	}
