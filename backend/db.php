@@ -153,7 +153,7 @@
 		}
 		
 		function create_user($user,$pass,$token,$email,$first,$last,$birth,$q1,$q2,$ans1,$ans2) {
-			$query = "INSERT INTO login VALUES(NULL,'$user','$pass',0,'$token','$email');";
+			$query = "INSERT INTO login VALUES(NULL,'$user','$pass',0,'$token','$email',NULL);";
 			$query .= "INSERT INTO info VALUES(NULL,'$first','$last','$birth',0,NULL,'$q1','$q2','$ans1','$ans2')";
 			if (mysqli_multi_query($this->connect, $query)) {
 				return mysqli_next_result($this->connect);
