@@ -30,6 +30,7 @@
    </head>
 	
    <body>
+   <center>
       <h1>Answer Security Questions</h1>
 
       <div class="container">
@@ -52,5 +53,6 @@
 
       </div>
 
+   </center>
    </body>
 </html>
