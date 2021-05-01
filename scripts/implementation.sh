@@ -108,6 +108,10 @@ sudo touch /usr/local/etc/rules/local.rules
 sudo touch /usr/local/etc/lists/default.blocklist
 sudo mkdir /var/log/snort
 
+#Adding ICMP traffic detection rule
+#sudo vi /usr/local/etc/rules/local.rules
+#alert icmp any any -> any any ( msg:"ICMP Traffic Detected"; sid:10000001; metadata:policy security-ips alert; )
+
 #Community Snort Rules: PullPorked
 cd ~/snort_src
 wget https://github.com/shirkdog/pulledpork/archive/master.tar.gz -O pulledpork-master.tar.gz
@@ -150,5 +154,11 @@ sudo cp etc/*.conf /usr/local/etc/pulledpork
 #Line 209
 #ips_policy=security
 
-## This'll run Snort ##
+## This'll verify if PulledPork works ##
 # sudo /usr/local/bin/pulledpork.pl -c /usr/local/etc/pulledpork/pulledpork.conf -l -P -E -H SIGHUP
+
+## This'll run Snort ##
+# sudo snort -c /usr/local/etc/snort/snort.lua -i eth0 -A alert_fast -s 65535 -k none
+
+# To do a test run, have two windows ssh onto the same server
+# On one session run Snort and the other session ping the IP address you used to ssh onto the server
