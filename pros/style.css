@@ -1,11 +1,14 @@
+body {
+  background-color: #ffffff;
+}
 input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 50%; /* Input Box width */
+  padding: 6px; /* Input Box size */
+  border: 2px solid #ccc; /* Border thickness */
+  border-radius: 8px; /* Input box boarder rounding */
   box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
+  margin-top: 4px; /* Space at the top */
+  margin-bottom: 4px; /* Space at the bottom */
 }
 
 /* Style the submit button */
@@ -16,22 +19,22 @@ input[type=submit] {
 
 /* Style the container for inputs */
 .container {
-  background-color: #f1f1f1;
+  background-color: #F5F5DC;
   padding: 20px;
 }
 
 /* The message box is shown when the user clicks on the password field */
 #message {
   display:none;
-  background: #f1f1f1;
-  color: #000;
+  background: #FFFAF0;
+  color: #000; */
   position: relative;
-  padding: 20px;
-  margin-top: 10px;
+  /* padding: 20px; */
+  /* margin-top: 10px; */
 }
 
 #message p {
-  padding: 10px 35px;
+  padding: 1px 5px;
   font-size: 18px;
 }
 

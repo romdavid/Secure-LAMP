@@ -9,14 +9,15 @@
    <h1>Welcome!</h1>
 
    <div class="container">
-      
+
+      <center>
       <h2>Sign in below</h2>
-   
+
       <form method="post" action="login.php" autocomplete="off">
       
-      Username: <input type="text" name="usr" maxlength="20" required><br><br>
+      Username: <br><input type="text" name="usr" maxlength="20" required><br><br>
       
-      Password: <input type="password" name="pwd" maxlength="30" required><br>
+      Password: <br><input type="password" name="pwd" maxlength="30" required><br>
 
       <p style="color:#FF0000";> <?php
 	
@@ -25,10 +26,11 @@
 		}
       
       ?></p><br>
-      
 
-      <center><input type="submit" name="sub" value="Login"/></center><br><br>
-      
+         <br>
+      <input type="submit" name="sub" value="Login"/><br><br>
+      </center>
+
       </form>	
       
       <A HREF="signup.html">Don't have an account? Sign up</A><br><br>
