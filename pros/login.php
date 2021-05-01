@@ -1,7 +1,8 @@
 <?php
 	require "../backend/db.php";
+	require "../backend/mail.php";
 	
-	if (!($_POST['usr'] and $_POST['pwd'])) {
+	if (is_null($_POST['usr']) or is_null($_POST['pwd'])) {
 		if ($_POST['sub']) {
 			header("location: index.php?msg=failed");
 			exit(0);
@@ -18,6 +19,7 @@
 	
 	if ($id) {
 		session_start();
+		$mail = new Email;
 		$data = $db->get_info($id);
 		
 		$prev_login = $data['formatted_date'];
@@ -31,11 +33,33 @@
 		$_SESSION['logins'] = intval($data['logins']+1);
 		$_SESSION['prev_login'] = $prev_login;
 		
-		$db->update_info($id);
-		header('location: pros.php');
-		
+		// Create mfa code
+	        $mfa = $db->create_mfa($id);
+		if ($mfa === false) {
+			header("location: index.php");
+			exit(0);
+		}
+
+		// Send code to mail
+	        $my_email = $db->get_email($id);
+	        if  ($my_email === false) {
+        	    header("location: index.php");
+	            exit(0);
+	        }
+	        $subject = 'Multi-factor Authentication';
+        	$body = '<b>Enter code into website to login</b>
+                	<br><br>
+	                Access Code: '.$mfa;
+
+	        if ($mail->send_email($my_email, $subject, $body) === false) {
+	            header("location: index.php");
+        	    exit(0);
+	        }
+
+		header('location: mfa.php');
+
 	} else {
-		//echo "Sorry but login failed :(";
+
 		header("location: index.php?msg=failed");
 	}
 

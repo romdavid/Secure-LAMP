@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if (is_null($_SESSION['first']) or is_null($_SESSION['last']) or is_null($_SESSION['logins']) or is_null($_SESSION['prev_login'])) {
+	if (is_null($_SESSION['first']) or is_null($_SESSION['last']) or is_null($_SESSION['logins']) or is_null($_SESSION['prev_login']) or is_null($_SESSION['mfa'])) {
 		session_destroy();
 		header('Location: index.php');
 		exit(0);

@@ -37,7 +37,29 @@
 				return false;
 			}
 		}
-		
+
+		function create_mfa($id) {
+			$code = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+			if (mysqli_query($this->connect, "UPDATE login SET mfa='$code' WHERE id='$id'")) {
+        			return $code;
+			} else {
+			        return false;
+    			}
+		}
+
+		function verify_mfa($code) {
+			$result = mysqli_query($this->connect, "SELECT id FROM login WHERE mfa='$code'");
+			if (mysqli_num_rows($result) == 1) {
+			        return mysqli_fetch_assoc($result)['id'];
+			} else {
+				return false;
+			}
+		}
+
+		function destroy_mfa($code) {
+			return mysqli_query($this->connect, "UPDATE login SET mfa=NULL WHERE mfa='$code'");
+		}
+
 		function get_info($id) {
 			$result = mysqli_query($this->connect, "SELECT first,last,logins,DATE_FORMAT(prev_login,'%b %d, %Y') AS formatted_date FROM info WHERE id='$id'");
 			if ($result) {
