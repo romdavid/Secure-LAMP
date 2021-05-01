@@ -6,11 +6,11 @@
 	
    <body>
 
+   <center>
    <h1>Welcome!</h1>
 
    <div class="container">
 
-      <center>
       <h2>Sign in below</h2>
 
       <form method="post" action="login.php" autocomplete="off">
@@ -29,7 +29,6 @@
 
          <br>
       <input type="submit" name="sub" value="Login"/><br><br>
-      </center>
 
       </form>	
       
@@ -37,6 +36,7 @@
       <A HREF="forgotuser.html">Forgot Username and Password?</A>
 
    </div>
+   </center>
 
    </body>
 </html>	

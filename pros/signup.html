@@ -7,13 +7,13 @@
    </head>
 	
    <body>
+   <center>
       <h1>Create Account</h1>
 
       <div class="container">
 
          <form method="post" action="createuser.php" autocomplete="off">
 
-             <center>
             First name:
             <br><input type="text" name="firstname" maxlength="25" required><br><br>
       
@@ -73,24 +73,13 @@
              <br><br>
 
                 <input type="submit" name="sub" value="Create Account" onclick="return Validate()"/>
-             </center><br><br>
+             <br><br>
 
          </form>
 
           <A HREF="index.php">Back to login page</A>
-
       </div>
-
-      <!--
-      <div id="message">
-         <h3>Password must contain the following:</h3>
-         <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-         <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-         <p id="number" class="invalid">A <b>number</b></p>
-         <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-      </div>
-      -->
-
+   </center>
    </body>
 </html>
 
